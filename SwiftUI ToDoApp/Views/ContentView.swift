@@ -9,9 +9,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, World!")
-    }
+  @EnvironmentObject var store: ItemStore
+
+  var body: some View {
+    ItemListView(items: store.items)
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
